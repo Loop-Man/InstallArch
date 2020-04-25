@@ -214,8 +214,8 @@ sudo pacman -S --noconfirm --needed ttf-ubuntu-font-family
 sudo pacman -S --noconfirm --needed ttf-droid
 sudo pacman -S --noconfirm --needed tumbler
 sudo pacman -S --noconfirm --needed vnstat
-sudo pacman -S --needed --noconfirm virtualbox-host-modules-arch
-sudo pacman -S --needed --noconfirm virtualbox
+#sudo pacman -S --needed --noconfirm virtualbox-host-modules-arch
+#sudo pacman -S --needed --noconfirm virtualbox
 sudo pacman -S --noconfirm --needed wget
 sudo pacman -S --noconfirm --needed wmctrl
 sudo pacman -S --noconfirm --needed unclutter
@@ -390,7 +390,7 @@ sudo pacman -S --noconfirm --needed hping
 sudo pacman -S --noconfirm --needed ngrep
 sudo pacman -S --noconfirm --needed metasploit
 sudo pacman -S --noconfirm --needed masscan
-sudo pacman -S --noconfirm --needed zaproxy
+#sudo pacman -S --noconfirm --needed zaproxy
 sudo pacman -S --noconfirm --needed smbclient
 sudo pacman -S --noconfirm --needed kxmlrpcclient
 sudo pacman -S --noconfirm --needed radare2
@@ -415,4 +415,3 @@ sudo pacman -S --noconfirm --needed clamav
 
 # Criptography
 sudo pacman -S --noconfirm --needed gnupg
-
