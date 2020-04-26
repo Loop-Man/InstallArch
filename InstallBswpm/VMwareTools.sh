@@ -17,9 +17,14 @@ sudo umount /dev/cdrom
 ##Creamos el servicio y lo activamos para que se ejecute al inicio
 
 sudo cp ./vmwaretools.service /etc/systemd/system/
-sleep 10
+sleep 5
 sudo systemctl enable vmwaretools.service
 sudo systemctl start vmwaretools.service
+
+sleep 5
+
+## Sincronizamos la hora con el sistema anfitrion
+vmware-toolbox-cmd timesync enable
 
 ## Habilitamos la carpeta compartida
 
@@ -27,5 +32,7 @@ compartida=$(vmware-hgfsclient)
 mkdir ~/Shared
 sudo mount -t fuse.vmhgfs-fuse .host:/$compartida ~/Shared/ -o allow_other
 
-echo "Realiza un reboot"
+## Activamos copiar y pegar entre sistemas
+vmware-user
 
+echo "Realiza un reboot"
