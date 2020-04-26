@@ -19,4 +19,12 @@ sudo umount /dev/cdrom
 sudo cp ./vmwaretools.service /etc/systemd/system/
 sleep 10
 sudo systemctl enable vmwaretools.service
+
+## Habilitamos la carpeta compartida
+
+compartida=$(vmware-hgfsclient)
+mkdir ~/Shared
+sudo mount -t fuse.vmhgfs-fuse .host:/$compartida ~/Shared/ -o allow_other
+
 echo "Finish"
+
