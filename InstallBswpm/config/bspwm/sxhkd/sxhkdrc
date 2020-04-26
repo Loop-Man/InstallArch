@@ -51,7 +51,7 @@ F12
 # SUPER + ... KEYS
 #################################################################
 
-# visual-studio-code
+# visual-studio-code 
 super + c
     code
 
@@ -59,27 +59,27 @@ super + c
 super + w
     firefox
 
-#Htop
+#Htop (Ver procesos corriendo)
 super + h
     urxvt 'htop task manager' -e htop
 
-#Rofi Menu
+#Rofi Menu (Lanzador de apps)
 super + d
 	rofi -show run
 
-#Oblogout
+#Oblogout (Gestor de sesion)
 super + x
     oblogout
 
-#Ranger
+#Ranger (Navegador de directorios por cli)
 super + r
 	exec urxvt -e ranger
 
-#Urxvt
+#Urxvt (Terminal)
 super + t
     urxvt
 
-#urxvt
+#urxvt (Terminal)
 super + Return
     urxvt
 
@@ -87,9 +87,9 @@ super + Return
 super + a
     pavucontrol
 
-#Pragha
-super + p
-    pragha
+#Pragha (Reproducción de audios)
+#super + p
+#    pragha
 
 #Burpsuite
 super + b
@@ -114,6 +114,14 @@ super + shift + d
 #reload sxhkd:
 super + shift + s
 	pkill -USR1 -x sxhkd
+	
+#Reload bspwm
+super + shift + r
+	~/.config/bspwm/bspwmrc
+
+#Logout
+super + shift + x
+	bspc quit
 
 #Nmtui (Interfaz grafica para gestionar la red)
 super + shift + w
@@ -288,7 +296,7 @@ ctrl + alt + o
     ~/.config/bspwm/scripts/picom-toggle.sh
 
 #################################################################
-# SUPER + KEYS
+# SUPER + KEYS (State Windows)
 #################################################################
 
 #Toggle fullscreen of window
@@ -299,53 +307,59 @@ super + f
 super + p
 	bspc node --state \~pseudo_tiled
 
+# Toggle tiled of window
+super + t
+	bspc node --state \~tiled
+	
+# set the window state (Establece la ventana flotante)
+super + s
+	bspc node focused -t \~floating
+	
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
 #kill
 super + q
 	bspc node -c
+	
+# Expand tiled space (Aumenta, o disminuye tamaño de la ventana)
+super + alt + {h,j,k,l}
+	bspc node {@west -r -10,@north -r +10,@north -r -10,@west -r +10}
 
 #################################################################
-# SUPER KEYS
+# SUPER KEYS (FOCUS/SWAP)
 #################################################################
 
-#Focus selected desktop
-super + Tab
-	bspc desktop -f '^{1-9,10}'
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
 
-# Increase/decrease window gap on focused desktop (No funciona)
-#super + bracket{left,right}
-#	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
 
-# set the window state (Establece la ventana flotante)
-super + shift + space
-	bspc node focused -t \~floating
+# Increase/decrease window gap on focused desktop
+super + bracket{left,right}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
 
 # swap the current node and the biggest local node
 super + space
 	bspc node -f next.local
 
-# Move focus to other monitor (No funciona)
+# Move focus to other monitor
 super + BackSpace
 		bspc monitor -f next
-
-#################################################################
-# SUPER + ALT KEYS
-#################################################################
-
-# move a floating window
-super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
-
+		
 #################################################################
 # SUPER + SHIFT KEYS
 #################################################################
-
-#Reload bspwm
-super + shift + r
-	~/.config/bspwm/bspwmrc
-
-#Logout
-super + shift + x
-	bspc quit
 
 # Focus/swap windows by direction
 super + {_,shift + }{h,j,k,l}
@@ -354,22 +368,6 @@ super + {_,shift + }{h,j,k,l}
 # Flip layout vertically/horizontally
 super + {_,shift + }a
 	bspc node @/ --flip {vertical,horizontal}
-
-# Move focused window to other monitor
-#super + shift + Left
-#	bspc node -m next --follow
-
-# Move focused window to other monitor
-#super + shift + Right
-#		bspc node -m next --follow
-
-# Move focused window to other monitor
-#super + shift + Up
-#	bspc node -m next --follow
-
-# Move focused window to other monitor
-#super + shift + Down
-#		bspc node -m next --follow
 
 #################################################################
 # SUPER + CONTROL KEYS (Preselection)
@@ -383,9 +381,10 @@ super + ctrl + {Left,Down,Up,Right}
 super + ctrl + {h,j,k,l}
 	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
 
-# Preselect the splitting area for next window on leaf/parent
-super + ctrl + {y,u,i,o}
+# preselect the direction
+super + ctrl + alt + {Left,Down,Up,Right}
 	bspc node --presel-dir \~{west,south,north,east}
+	
 # Define splitting ratio for next window on leaf/parent 
 super + ctrl + {_,shift +}{1-9}
 	bspc node {_,@/} --presel-ratio 0.{1-9}
@@ -405,14 +404,6 @@ alt + Tab
 #Rotate desktop
 alt + space
 	bspc node @/ --rotate {90,-90}
-
-#################################################################
-# ALT + SHIFT KEYS
-#################################################################
-
-# Expand tiled space (Aumenta, o disminuye tamaño de la ventana)
-alt + shift + {h,j,k,l}
-	bspc node {@west -r -10,@north -r +10,@north -r -10,@west -r +10}
 	
 #################################################################
 
