@@ -7,7 +7,7 @@ read
 sudo pacman -Syu
 sudo pacman -S --noconfirm --needed net-tools linux-headers xf86-input-vmmouse xf86-video-vmware
 sudo mkdir -p /etc/init.d/{rc0.d,rc1.d,rc2.d,rc3.d,rc4.d,rc5.d,rc6.d}
-sduo mkdir -p /mnt/cdrom
+sudo mkdir -p /mnt/cdrom
 sudo mount /dev/cdrom /mnt/cdrom
 sleep 5
 tar xf /mnt/cdrom/VMwareTools*.tar.gz -C ~/
