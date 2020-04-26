@@ -17,6 +17,6 @@ sudo umount /dev/cdrom
 ##Creamos el servicio y lo activamos para que se ejecute al inicio
 
 sudo cp ./vmwaretools.service /etc/systemd/system/
+sleep 10
 sudo systemctl enable vmwaretools.service
-
 echo "Finish"
