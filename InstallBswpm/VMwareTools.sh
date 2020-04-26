@@ -19,3 +19,4 @@ sudo umount /dev/cdrom
 sudo cp ./vmwaretools.service /etc/systemd/system/
 sudo systemctl enable vmwaretools.service
 
+echo "Finish"
