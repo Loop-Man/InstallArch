@@ -76,16 +76,16 @@ super + r
 	exec urxvt -e ranger
 
 #Urxvt (Terminal)
-super + t
-    urxvt
+#super + t
+#    urxvt
 
 #urxvt (Terminal)
 super + Return
     urxvt
 
 #Pavucontrol (controlador de audio de pulseaudio)
-super + a
-    pavucontrol
+#super + a
+#    pavucontrol
 
 #Pragha (Reproducción de audios)
 #super + p
@@ -313,7 +313,7 @@ super + t
 	
 # set the window state (Establece la ventana flotante)
 super + s
-	bspc node focused -t \~floating
+	bspc node --state \~floating
 	
 # move a floating window
 super + {Left,Down,Up,Right}
