@@ -33,6 +33,7 @@ mkdir ~/Shared
 sudo mount -t fuse.vmhgfs-fuse .host:/$compartida ~/Shared/ -o allow_other
 
 ## Activamos copiar y pegar entre sistemas
+echo "vmware-user" >> ~/.xinitrc ### Para que se ejecute siempre al iniciar
 vmware-user
 
 echo "Realiza un reboot"
