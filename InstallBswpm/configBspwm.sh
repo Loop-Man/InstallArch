@@ -61,6 +61,8 @@ cd ~/.config/polybar
 chmod +x launch.sh
 cd ~/.config/polybar/scripts
 chmod +x get_ip.sh vpn_status.sh
+cd ~/.config/bspwm/scripts/
+chmod +x bspwm_resize picom-toggle.sh
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
