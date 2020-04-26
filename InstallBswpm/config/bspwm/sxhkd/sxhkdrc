@@ -179,7 +179,7 @@ ctrl + alt + a
 
 #Wallpaper trash
 alt + t
-    gksudo variety -t
+    variety -t
 
 #Wallpaper next
 alt + n
@@ -322,8 +322,8 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # Custom move/resize
-alt + ctrl + {Left,Down,Up,Right}
-	~/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
+alt + ctrl + shift + {Left,Down,Up,Right}
+	/home/orion/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
 
 # alternate between the tiled and monocle layout
 super + m
