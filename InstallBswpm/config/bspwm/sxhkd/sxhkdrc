@@ -29,18 +29,26 @@ F5
 #Vlc (Reproductor de video vlc)
 F6
 	vlc --video-on-top
-
+	
+Pragha (Reproducción de audios)
+F7
+    pragha
+    
+#Pavucontrol (controlador de audio de pulseaudio)
+F8
+    pavucontrol
+    
 #Virtualbox
-#F7
+#F9
 #	virtualbox
 
 
 #Rofi Fullscreen
-F8
+F10
 	rofi -show run -fullscreen
 
 #Spotify
-#F10
+#F11
 #    spotify
 
 #xfce4-terminal dropdown
@@ -51,6 +59,8 @@ F12
 # SUPER + ... KEYS
 #################################################################
 
+## Las comentadas es porque coinciden con otros comandos
+
 # visual-studio-code 
 super + c
     code
@@ -60,8 +70,8 @@ super + w
     firefox
 
 #Htop (Ver procesos corriendo)
-super + h
-    urxvt 'htop task manager' -e htop
+#super + h
+#    urxvt 'htop task manager' -e htop
 
 #Rofi Menu (Lanzador de apps)
 super + d
@@ -75,21 +85,9 @@ super + x
 super + r
 	exec urxvt -e ranger
 
-#Urxvt (Terminal)
-#super + t
-#    urxvt
-
 #urxvt (Terminal)
 super + Return
     urxvt
-
-#Pavucontrol (controlador de audio de pulseaudio)
-#super + a
-#    pavucontrol
-
-#Pragha (Reproducción de audios)
-#super + p
-#    pragha
 
 #Burpsuite
 super + b
@@ -98,6 +96,14 @@ super + b
 #Xkill (Matar graficamente cualquier programa congelado)
 super + Escape
     xkill
+    
+#########################
+#        POLYBAR        #
+#########################
+
+#Hide polybar
+super + y
+    polybar-msg cmd toggle
 
 #################################################################
 # SUPER + SHIFT KEYS
@@ -144,7 +150,7 @@ ctrl + alt + f
      firefox
 
 #Betterlockscreen (Para bloquear el equipo)
-ctrl + alt + l
+ctrl + alt + q
    betterlockscreen -l 
 
 #Pamac-manager
@@ -273,14 +279,6 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
     xbacklight -dec 10
 
-#########################
-#        POLYBAR        #
-#########################
-
-#Hide polybar
-super + y
-    polybar-msg cmd toggle
-
 #################################################################
 #################################################################
 ##################   DESKTOP SPECIFIC    ########################
@@ -311,6 +309,10 @@ super + p
 super + t
 	bspc node --state \~tiled
 	
+# Expand tiled space (Aumenta, o disminuye tamaño de la ventana)
+super + alt + {h,j,k,l}
+	bspc node {@west -r -10,@north -r +10,@north -r -10,@west -r +10}
+	
 # set the window state (Establece la ventana flotante)
 super + s
 	bspc node --state \~floating
@@ -319,6 +321,10 @@ super + s
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# Custom move/resize
+alt + ctrl + {Left,Down,Up,Right}
+	/home/orion/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
+
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
@@ -326,10 +332,6 @@ super + m
 #kill
 super + q
 	bspc node -c
-	
-# Expand tiled space (Aumenta, o disminuye tamaño de la ventana)
-super + alt + {h,j,k,l}
-	bspc node {@west -r -10,@north -r +10,@north -r -10,@west -r +10}
 
 #################################################################
 # SUPER KEYS (FOCUS/SWAP)
