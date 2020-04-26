@@ -297,25 +297,13 @@ ctrl + alt + o
 # SUPER + KEYS (State Windows)
 #################################################################
 
-#Toggle fullscreen of window
-super + f
-	bspc node --state \~fullscreen
-
-# Toggle pseudo tiling of window
-super + p
-	bspc node --state \~pseudo_tiled
-
-# Toggle tiled of window
-super + t
-	bspc node --state \~tiled
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 	
 # Expand tiled space (Aumenta, o disminuye tamaño de la ventana)
 super + alt + {h,j,k,l}
 	bspc node {@west -r -10,@north -r +10,@north -r -10,@west -r +10}
-	
-# set the window state (Establece la ventana flotante)
-super + s
-	bspc node --state \~floating
 	
 # move a floating window
 super + {Left,Down,Up,Right}
@@ -341,15 +329,9 @@ super + q
 super + {grave,Tab}
 	bspc {node,desktop} -f last
 
-# focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
-
 # Increase/decrease window gap on focused desktop
-super + bracket{left,right}
-	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
+#super + bracket{left,right}
+#	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
 
 # swap the current node and the biggest local node
 super + space
@@ -401,7 +383,7 @@ super + ctrl + space
 
 #Focus selected desktop
 alt + Tab
-	bspc desktop -f '^{1-9,10}'
+	bspc {node,desktop} -f last
 
 #Rotate desktop
 alt + space
