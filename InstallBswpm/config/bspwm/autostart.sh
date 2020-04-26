@@ -30,7 +30,7 @@ run sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
 
 run variety &
 run nm-applet &
-run pamac-tray &
+#run pamac-tray & (Gestor grafico de actualización de paquetes)
 run xfce4-power-manager &
 numlockx on &
 blueberry-tray &
