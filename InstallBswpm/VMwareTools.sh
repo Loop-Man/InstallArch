@@ -14,3 +14,8 @@ tar xf /mnt/cdrom/VMwareTools*.tar.gz -C ~/
 sudo perl ~/vmware-tools-distrib/vmware-install.pl
 sudo umount /dev/cdrom
 
+##Creamos el servicio y lo activamos para que se ejecute al inicio
+
+sudo cp ./vmwaretools.service /etc/systemd/system/
+sudo systemctl enable vmwaretools.service
+
