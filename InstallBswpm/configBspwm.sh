@@ -39,13 +39,19 @@ cp -r config/Thunar ~/.config/
 cp -r config/variety ~/.config/
 
 echo "Copying wallpapers"
+#Comentado por necesitar permisos root
+#if [ ! -d "/usr/share/backgrounds" ]
+#then
+#    sudo mkdir -p /usr/share/backgrounds
+#fi
 
-if [ ! -d "/usr/share/backgrounds" ]
+#sudo -- sh -c 'cp -r backgrounds/* /usr/share/backgrounds/'
+
+if [ ! -d "~/backgrounds" ]
 then
-    sudo mkdir -p /usr/share/backgrounds
+    mkdir -p ~/backgrounds
 fi
-
-sudo -- sh -c 'cp -r backgrounds/* /usr/share/backgrounds/'
+cp -r backgrounds/* ~/backgrounds/
 
 echo "Setting permissions..."
 
@@ -58,14 +64,14 @@ chmod +x get_ip.sh vpn_status.sh
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-sleep 1
+sleep 5
 
 echo 'Setting /etc and /usr config files'
 cd ~/InstallArch/InstallBswpm/
 sudo cp oblogout.conf /etc/
 sudo cp -r solarized-squares64/ /usr/share/themes/
 
-sleep 1
+sleep 5
 
 echo "Setting some configuration..."
 sudo updatedb # Update mlocate db
@@ -92,7 +98,7 @@ sudo pacman -S archstrike-mirrorlist
 sudo sed -i 's/.*mirror.archstrike.*/Include = \/etc\/pacman.d\/archstrike-mirrorlist/' /etc/pacman.conf
 sudo pacman -Syy
 
-sleep 1
+sleep 3
 
 echo "Installing tools with archstrike"
 sudo pacman -S --noconfirm --needed dirb gobuster wfuzz dirbuster
@@ -106,7 +112,7 @@ sudo pacman -S --noconfirm --needed enum4linux
 sudo pacman -S --noconfirm --needed crackmapexec
 sudo pacman -S --noconfirm --needed wafw00f
 
-sleep 1
+sleep 3
 
 echo "Installing go tools"
 go get -u github.com/tomnomnom/assetfinder
