@@ -19,14 +19,13 @@ sudo pacman -S --noconfirm --needed fzf
 ##### Instalamos zsh #######
 
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-sed -i .tmp 's/\~\/.oh-my-zsh\}$/\~\/.zsh\/.oh-my-zsh\}/g' install.sh
+sed -i 's/\~\/.oh-my-zsh\}$/\~\/.zsh\/.oh-my-zsh\}/g' install.sh
 sh install.sh &>/dev/null &
 sleep 20
-rm -rf install.sh.tmp
-rm -rf install.sh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.zsh/.oh-my-zsh/themes/powerlevel10k
-sed -i .tmp 's/robbyrussell/powerlevel10k\/powerlevel10k/1' .zshrc
+sed -i 's/robbyrussell/powerlevel10k\/powerlevel10k/1' .zshrc
 rm -rf .zshrc.tmp
+rm -rf install.sh
 
 cp .zshrc ~/
 cp -r .zsh/ ~/
