@@ -423,11 +423,4 @@ sudo pacman -S --noconfirm --needed meld        # Para comparar ficheros o carpe
 sudo pacman -S --noconfirm --needed xorg-xkill  # Para matar graficamente un programa
 sudo pacman -S --noconfirm --needed praght      # Para reproducir audios
 sudo pacman -S --noconfirm --needed grc rlwrap openvpn #rlwrap para consola con memoria en reverse shell
-sudo pip3 install cve_searchsploit
-
-# Start with zsh
-sudo pacman -S --noconfirm --needed lsd         # ls con vitaminas
-sudo pacman -S --noconfirm --needed bat         # cat con vitaminas
-sudo pacman -S --noconfirm --needed fzf         # buscador cli basado en bash o zsh history
-sudo pacman -S --noconfirm --needed zsh zsh-doc zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-lovers zsh-syntax-highlighting zshdb zsh-theme-powerlevel10k
-
+sudo pip3 install cve_searchsploit              # Para buscar exploits por cve
