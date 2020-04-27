@@ -23,8 +23,13 @@ sed -i .tmp 's/\~\/.oh-my-zsh\}$/\~\/.zsh\/.oh-my-zsh\}/g' install.sh
 sh install.sh &>/dev/null &
 sleep 20
 rm -rf install.sh.tmp
+rm -rf install.sh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.zsh/.oh-my-zsh/themes/powerlevel10k
 sed -i .tmp 's/robbyrussell/powerlevel10k\/powerlevel10k/1' .zshrc
 rm -rf .zshrc.tmp
 
+cp .zshrc ~/
+cp -r .zsh/ ~/
 
+echo " Cambiar la shell del usuario con: chsh -s /usr/bin/zsh"
+echo " Cambiar la shell de root con: sudo chsh -s /usr/bin/zsh"
