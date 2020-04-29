@@ -27,13 +27,17 @@ sleep 5
 vmware-toolbox-cmd timesync enable
 
 ## Habilitamos la carpeta compartida
+## Recordar que hemos creado un alias montar para hacerlo automaticamente luego
 
-compartida=$(vmware-hgfsclient)
-mkdir ~/Shared
-sudo mount -t fuse.vmhgfs-fuse .host:/$compartida ~/Shared/ -o allow_other
+if [ ! -d "~/Shared" ] 
+then
+    mkdir -p ~/Shared
+fi
+
+sudo mount -t fuse.vmhgfs-fuse .host:/$(vmware-hgfsclient) ~/Shared/ -o allow_other
 
 ## Activamos copiar y pegar entre sistemas
-echo "vmware-user" >> ~/.xinitrc ### Para que se ejecute siempre al iniciar
+echo "run vmware-user &" >> ~/.config/bspwm/autostart.sh ### Para que se ejecute siempre al iniciar
 vmware-user
 
 echo "Realiza un reboot"
