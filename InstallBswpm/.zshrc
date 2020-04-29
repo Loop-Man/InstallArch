@@ -1,15 +1,8 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/orion/.zsh/.oh-my-zsh"
+export ZSH="$HOME/.zsh/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -105,14 +98,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-[ -f ~/.zsh/.fzf.zsh ] && source ~/.zsh/.fzf.zsh
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh
 
 # For go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+#Fix the Java Problem
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Aliases
 
@@ -164,12 +158,7 @@ alias rm='rm -v'
 #readable output
 alias df='df -h'
 
-
-#Fix the Java Problem
-export _JAVA_AWT_WM_NONREPARENTING=1
-
 #HTB vpn
-
 alias htbvpn='sudo /usr/bin/openvpn ~/HTB/ElderOrion.ovpn'
 
 # # ex = EXtractor for all kinds of archives
@@ -215,9 +204,11 @@ function man() {
 }
 
 # History
-SAVEHIST=100000
+SAVEHIST=1000000
 HISTFILE=~/.zsh/.zsh_history
 setopt inc_append_history
+
+[ -f ~/.zsh/.fzf.zsh ] && source ~/.zsh/.fzf.zsh
 
 # fzf improvement
 function fzf-lovely(){
