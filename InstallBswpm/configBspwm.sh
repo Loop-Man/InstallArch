@@ -39,13 +39,16 @@ cp -r config/Thunar ~/.config/
 cp -r config/variety ~/.config/
 
 echo "Copying wallpapers"
-#Comentado por necesitar permisos root
-#if [ ! -d "/usr/share/backgrounds" ]
-#then
-#    sudo mkdir -p /usr/share/backgrounds
-#fi
 
-#sudo -- sh -c 'cp -r backgrounds/* /usr/share/backgrounds/'
+### Ruta para las imágenes del gestor de login, no funciona en ruta usuario
+### El fichero desde donde se llaman es lightdm-gtk-greeter.conf
+if [ ! -d "/opt/backgrounds/icons" ]
+then
+    sudo mkdir -p /opt/backgrounds/icons
+fi
+
+sudo -- sh -c 'cp -r backgrounds/background.png /opt/backgrounds/'
+sudo -- sh -c 'cp -r backgrounds/icons/cyberninja.jpg /opt/backgrounds/icons/'
 
 if [ ! -d "~/backgrounds" ]
 then
