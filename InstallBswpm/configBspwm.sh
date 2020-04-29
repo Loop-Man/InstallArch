@@ -60,7 +60,7 @@ chmod +x bspwmrc autostart.sh
 cd ~/.config/polybar
 chmod +x launch.sh
 cd ~/.config/polybar/scripts
-chmod +x get_ip.sh vpn_status.sh
+chmod +x get_ip.sh vpn_status.sh connected.sh
 cd ~/.config/bspwm/scripts/
 chmod +x bspwm_resize picom-toggle.sh
 
