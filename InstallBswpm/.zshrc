@@ -159,7 +159,10 @@ alias rm='rm -v'
 alias df='df -h'
 
 #HTB vpn
-alias htbvpn='sudo /usr/bin/openvpn ~/HTB/ElderOrion.ovpn'
+alias htbvpn='sudo /usr/bin/openvpn ~/HTB/ElderOrion.ovpn
+
+#Montar carpeta compartida en vmware
+alias montar='sudo mount -t fuse.vmhgfs-fuse .host:/$(vmware-hgfsclient) ~/Shared -o allow_other'
 
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
