@@ -422,5 +422,7 @@ sudo pacman -S --noconfirm --needed code        # Para programar con visual-stud
 sudo pacman -S --noconfirm --needed meld        # Para comparar ficheros o carpetas
 sudo pacman -S --noconfirm --needed xorg-xkill  # Para matar graficamente un programa
 sudo pacman -S --noconfirm --needed praght      # Para reproducir audios
-sudo pacman -S --noconfirm --needed grc rlwrap openvpn #rlwrap para consola con memoria en reverse shell
-sudo pip3 install cve_searchsploit              # Para buscar exploits por cve
+sudo pacman -S --noconfirm --needed grc         # Para poner colores a los comandos por cli
+sudo pacman -S --noconfirm --needed rlwrap      # rlwrap para consola con memoria en reverse shell
+sudo pacman -S --noconfirm --needed openvpn     # Cliente vpn
+
