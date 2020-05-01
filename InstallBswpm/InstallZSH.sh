@@ -29,6 +29,9 @@ rm -rf install.sh
 
 ## Instalo fzf:
 git clone --depth 1 https://github.com/junegunn/fzf.git  ~/.fzf
+~/.fzf/install
+
+rm -rf ~/.fzf.*
 
 cp .zshrc ~/
 cp -r .zsh/ ~/
