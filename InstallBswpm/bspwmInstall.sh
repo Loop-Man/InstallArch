@@ -425,4 +425,8 @@ sudo pacman -S --noconfirm --needed praght      # Para reproducir audios
 sudo pacman -S --noconfirm --needed grc         # Para poner colores a los comandos por cli
 sudo pacman -S --noconfirm --needed rlwrap      # rlwrap para consola con memoria en reverse shell
 sudo pacman -S --noconfirm --needed openvpn     # Cliente vpn
-
+sudo pacman -S --noconfirm --needed python-pip  # Instalar pip3
+sudo pacman -S --noconfirm --needed python2-pip # Instalar pip
+sudo pip install -U pip                         # Actualizar pip
+sudo pip3 install -U pip                        # Actualizar pip3
+sudo pip3 install cve_searchsploit              # Instalamos searchsploit_cve
