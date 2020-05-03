@@ -285,6 +285,10 @@ yay -S --noconfirm --needed nerd-fonts-hack
 yay -S --noconfirm --needed oblogout
 yay -S --noconfirm --needed gksu
 
+#### Añadidos Loop-man #####
+yay -S --noconfirm --needed samdump2            #Para leer binario SAM
+yay -S --noconfirm --needed rocket-depot-git    #Para xfreerdp
+
 # these come always last
 
 yay -S --noconfirm --needed hardcode-fixer-git
