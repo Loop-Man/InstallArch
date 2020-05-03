@@ -193,6 +193,12 @@ function mkt(){
     mkdir {nmap,content,exploits,scripts}
 }
 
+## Funcion para ver las categorias de los scripts de nmap
+
+function nmap_categories(){
+    grep -r "categories" /usr/share/nmap/scripts/*.nse | grep -oP '".*?"' | sort -u
+}
+
 # Set 'man' colors
 function man() {
     env \
