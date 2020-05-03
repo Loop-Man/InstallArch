@@ -127,23 +127,6 @@ sudo pacman -S --noconfirm --needed windows-exploit-suggester-git
 sudo pacman -S --noconfirm --needed smbmap-git
 sudo pacman -S --noconfirm --needed cryptcat
 
-echo "Intalling tools with AUR Repo"
-
-if [ ! -d "~/tools" ]
-then
-    mkdir -p ~/tools
-fi
-
-git clone https://aur.archlinux.org/samdump2.git ~/tools/
-cd ~/tools/samdump2
-makepkg -si
-cd ~
-
-git clone https://aur.archlinux.org/rocket-depot-git.git ~/tools/
-cd ~/tools/rocket-depot-git
-makepkg -si
-cd ~
-
 sleep 3
 
 echo "Installing go tools"
