@@ -115,6 +115,10 @@ sudo pacman -S --noconfirm --needed hash-identifier
 sudo pacman -S --noconfirm --needed dnsenum sublist3r-git
 sudo pacman -S --noconfirm --needed enum4linux
 #sudo pacman -S --noconfirm --needed crackmapexec
+git clone --recursive https://github.com/byt3bl33d3r/CrackMapExec /opt/
+cd /opt/CrackMapExec
+python3 setup.py install
+cd ~
 sudo pacman -S --noconfirm --needed wafw00f
 sudo pacman -S --noconfirm --needed windows-binaries
 sudo pacman -S --noconfirm --needed nishang
