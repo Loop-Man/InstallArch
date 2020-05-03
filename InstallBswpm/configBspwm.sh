@@ -114,8 +114,31 @@ sudo pacman -S --noconfirm --needed dirsearch
 sudo pacman -S --noconfirm --needed hash-identifier
 sudo pacman -S --noconfirm --needed dnsenum sublist3r-git
 sudo pacman -S --noconfirm --needed enum4linux
-sudo pacman -S --noconfirm --needed crackmapexec
+#sudo pacman -S --noconfirm --needed crackmapexec
 sudo pacman -S --noconfirm --needed wafw00f
+sudo pacman -S --noconfirm --needed windows-binaries
+sudo pacman -S --noconfirm --needed nishang
+sudo pacman -S --noconfirm --needed powersploit-git
+sudo pacman -S --noconfirm --needed windows-exploit-suggester-git
+sudo pacman -S --noconfirm --needed smbmap-git
+sudo pacman -S --noconfirm --needed cryptcat
+
+echo "Intalling tools with AUR Repo"
+
+if [ ! -d "~/tools" ]
+then
+    mkdir -p ~/tools
+fi
+
+git clone https://aur.archlinux.org/samdump2.git ~/tools/
+cd ~/tools/samdump2
+makepkg -si
+cd ~
+
+git clone https://aur.archlinux.org/rocket-depot-git.git ~/tools/
+cd ~/tools/rocket-depot-git
+makepkg -si
+cd ~
 
 sleep 3
 
