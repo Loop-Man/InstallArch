@@ -395,7 +395,10 @@ sudo pacman -S --noconfirm --needed ngrep
 sudo pacman -S --noconfirm --needed metasploit
 sudo pacman -S --noconfirm --needed masscan
 #sudo pacman -S --noconfirm --needed zaproxy
+sudo pacman -S --noconfirm --needed samba
+sudo pacman -S --noconfirm --needed xclip
 sudo pacman -S --noconfirm --needed smbclient ### Requiere: touch /etc/samba/smb.config
+sudo touch /etc/samba/smb.config
 sudo pacman -S --noconfirm --needed kxmlrpcclient
 sudo pacman -S --noconfirm --needed radare2
 sudo pacman -S --noconfirm --needed parallel
