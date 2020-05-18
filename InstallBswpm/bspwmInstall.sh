@@ -436,8 +436,8 @@ sudo pacman -S --noconfirm --needed tree        # Tree para ver directorios
 sudo pacman -S --noconfirm --needed openbsd-netcat # Netcat que mas me gusta de pacman
 sudo pacman -S --noconfirm --needed rdesktop    # escritorio remoto, no va muy bien.
 sudo pacman -S --noconfirm --needed python-pip  # Instalar pip3
-sudo pacman -S --noconfirm --needed python2-pip # Instalar pip
-sudo pip install -U pip                         # Actualizar pip
-sudo pip3 install -U pip                        # Actualizar pip3
+sudo pacman -S --noconfirm --needed python2-pip # Instalar pip2
+sudo pip2 install -U pip                        # Actualizar pip2
+sudo pip install -U pip                         # Actualizar pip3
 sudo pip3 install cve_searchsploit              # Instalamos searchsploit_cve
 
