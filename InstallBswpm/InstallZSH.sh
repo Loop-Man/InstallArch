@@ -45,3 +45,4 @@ sudo cve_searchsploit -u
 
 echo " Cambiar la shell del usuario con: chsh -s /usr/bin/zsh"
 echo " Cambiar la shell de root con: sudo chsh -s /usr/bin/zsh"
+echo " Usar este script con root y con usuario normal"
